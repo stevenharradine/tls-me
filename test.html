@@ -1,0 +1,31 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>TLS Me - test page</title>
+  </head>
+  <body>
+    <a id="browse-happy" href="http://browsehappy.com/">You should upgrade your browser</a>
+
+    <script type="text/javascript">
+      // source http://stackoverflow.com/questions/8567114/how-to-make-an-ajax-call-without-jquery on 20160726 @ 18:45 EST
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            if (xmlhttp.responseText.indexOf("TLSv1.2") >= 0) {
+              document.getElementById("browse-happy").innerHTML = "Happy safe browsing";
+             }
+           } else if (xmlhttp.status == 400) {
+             alert('There was an error 400');
+           } else {
+             alert('something else other than 200 was returned');
+           }
+         }
+      };
+
+      xmlhttp.open("GET", "/", true);
+      xmlhttp.send();
+    </script>
+  </body>
+</html>

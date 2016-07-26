@@ -10,7 +10,7 @@
   ) {
     $tls_version = $unclean_tls_version;
   } else {
-    $tls_version = 'Sanitation failed';
+    $tls_version = '-1';
   }
 
   echo "{\"tls_version\": \"$tls_version\"}";

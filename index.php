@@ -2,7 +2,7 @@
   $unclean_tls_version = $_SERVER['X-HTTPS-Protocol'];
   $tls_version = '';
 
-  // sanitize tls version
+  // Sanitise tls version
   if (
     $unclean_tls_version == 'TLSv1.2' ||
     $unclean_tls_version == 'TLSv1.1' ||

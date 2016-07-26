@@ -10,7 +10,7 @@
   ) {
     $tls_version = $unclean_tls_version;
   } else {
-    $tls_version = "Sanitization failed"
+    $tls_version = "Sanitization failed";
   }
 
   echo "{\"tls_version\": \"$tls_version\"}";

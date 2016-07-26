@@ -4,7 +4,7 @@
 
   // sanitize tls version
   if (
-    $unclean_tls_version == 'TLS1.2' ||
+    $unclean_tls_version == 'TLSv1.2' ||
     $unclean_tls_version == 'TLSv1.1' ||
     $unclean_tls_version == 'TLSv1'
   ) {

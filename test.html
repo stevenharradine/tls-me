@@ -13,7 +13,17 @@
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
           if (xmlhttp.status == 200) {
-            if (xmlhttp.responseText.indexOf("TLSv1.2") >= 0) {
+            // sanitise response
+            var unclean_tls_version = JSON.parse (xmlhttp.responseText).tls_version;
+            if (
+              unclean_tls_version == "TLSv1.2" ||
+              unclean_tls_version == "TLSv1.1" ||
+              unclean_tls_version == "TLSv1"
+            ) {
+              tls_version = unclean_tls_version;
+            }
+
+            if (tls_version == "TLSv1.2") {
               document.getElementById("browse-happy").innerHTML = "Happy safe browsing";
              }
            } else if (xmlhttp.status == 400) {

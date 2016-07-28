@@ -26,10 +26,12 @@
             if (tls_version == "TLSv1.2") {
               document.getElementById("browse-happy").innerHTML = "Happy safe browsing";
              }
-           } else if (xmlhttp.status == 400) {
-             alert('There was an error 400');
            } else {
-             alert('something else other than 200 was returned');
+             // something other then 200 returned
+             // Either:
+             //   the client was unable to establish a connection do to being too old and cant match chiphers and key exchange
+             // Or:
+             //   tls-me service is down
            }
          }
       };

@@ -1,4 +1,7 @@
 <?php
+  header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+  header("Expires: Tue, 01 Jan 1980 1:00:00 GMT");    // Date in the past
+
   $unclean_tls_version = $_SERVER['X-HTTPS-Protocol'];
   $tls_version = '';
 
